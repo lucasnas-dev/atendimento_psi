@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Atendimento Psicológico</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <form id="loginForm" method="POST">
+            <h2>Atendimento Psicológico</h2>
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpfLogin" name="cpf" required pattern="\d{11}" placeholder="Digite seu CPF">
+            <label for="senha">Senha:</label>
+            <input type="password" id="senhaLogin" name="senha" required placeholder="Digite sua senha">
+            <div id="message"></div> <!-- Mensagem de feedback -->
+            <input type="button" value="Entrar" id="entrarButton" onclick="entrar()">
+            <a href="cadastro.html">Cadastrar</a> <!-- Link para abrir a nova página de cadastro -->
+            <a href="#">Esqueceu a senha?</a> <!-- Link para recuperação de senha -->
+        </form>
+    </div>
+
+    <script src="script.js"></script> <!-- Vinculando o arquivo JS -->
+</body>
+</html>

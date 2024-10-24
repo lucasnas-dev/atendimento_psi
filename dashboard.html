@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Principal - Atendimento Psicológico</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="container-principal">
+        <div class="cabecalho-principal">
+            <div class="usuario-info">
+                <span id="usuarioLogado">Usuário: </span>
+            </div>
+            <div class="logout-container">
+                <a href="#" class="logout-small" onclick="logout()">Sair</a>
+            </div>
+        </div>
+        <div class="conteudo-container">
+            <div class="menu-lateral">
+                <ul>
+                    <li><a href="#" onclick="carregarConteudo('cadastrar_consulta.html')">Cadastrar Consulta</a></li>
+                    <li><a href="#" onclick="carregarConteudo('listar_consultas.html')">Listar Consultas</a></li>
+                    <li><a href="#" onclick="carregarConteudo('perfil.html')">Meu Perfil</a></li>
+                </ul>
+            </div>
+            <div class="conteudo-principal" id="conteudo">
+                <p>Selecione uma opção no menu ao lado.</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const usuarioLogado = localStorage.getItem('loggedUser');
+            if (usuarioLogado) {
+                document.getElementById('usuarioLogado').textContent = `Usuário: ${usuarioLogado}`;
+            }
+        });
+    </script>
+</body>
+</html>

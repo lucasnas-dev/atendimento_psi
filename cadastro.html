@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Atendimento Psicológico</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <div class="pop-up-content">
+            <span class="close-button" onclick="fecharFormularioCadastro()">&times;</span>
+            <h2>Cadastro - Atendimento Psicológico</h2>
+            <label for="nome_completo">Nome Completo:</label>
+            <input type="text" id="nome_completo" name="nome_completo" required placeholder="Digite seu nome completo">
+            <label for="senhaCadastro">Senha:</label>
+            <input type="password" id="senhaCadastro" name="senhaCadastro" required placeholder="Crie uma senha">
+            <small>A senha deve ter pelo menos 6 caracteres para garantir a segurança dos seus dados.</small>
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpfCadastro" name="cpfCadastro" required pattern="\d{11}" placeholder="Digite seu CPF">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="Digite seu email">
+            <div id="messageCadastro"></div> <!-- Mensagem de feedback -->
+            <input type="button" value="Cadastrar" id="cadastrarButton" onclick="cadastrar()">
+        </div>
+    </div>
+
+    <script src="script.js"></script> <!-- Vinculando o arquivo JS -->
+</body>
+</html>

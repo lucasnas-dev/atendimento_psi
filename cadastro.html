@@ -3,29 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro - Atendimento Psicológico</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="index.css">
+    <title>Cadastro de Usuário</title>
+    <link rel="stylesheet" href="css/cadastro.css">
 </head>
 <body>
-    <div class="container">
-        <div class="pop-up-content">
-            <span class="close-button" onclick="fecharFormularioCadastro()">&times;</span>
-            <h2>Cadastro - Atendimento Psicológico</h2>
-            <label for="nome_completo">Nome Completo:</label>
-            <input type="text" id="nome_completo" name="nome_completo" required placeholder="Digite seu nome completo">
-            <label for="senhaCadastro">Senha:</label>
-            <input type="password" id="senhaCadastro" name="senhaCadastro" required placeholder="Crie uma senha">
-            <small>A senha deve ter pelo menos 6 caracteres para garantir a segurança dos seus dados.</small>
+    <div class="cadastro-container">
+        <h1>Cadastro de Usuário</h1>
+        <form id="cadastroForm">
+            <label for="nomeCompleto">Nome Completo:</label>
+            <input type="text" id="nomeCompleto" name="nomeCompleto" placeholder="Digite seu nome completo" required>
+            
             <label for="cpf">CPF:</label>
-            <input type="text" id="cpfCadastro" name="cpfCadastro" required pattern="\d{11}" placeholder="Digite seu CPF">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required placeholder="Digite seu email">
-            <div id="messageCadastro"></div> <!-- Mensagem de feedback -->
-            <input type="button" value="Cadastrar" id="cadastrarButton" onclick="cadastrar()">
-        </div>
-    </div>
+            <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF" required pattern="\d{11}" title="Digite um CPF válido (apenas números)">
 
-    <script src="script.js"></script> <!-- Vinculando o arquivo JS -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+            
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" placeholder="Crie uma senha" required>
+            
+            <label for="confirmarSenha">Confirmar Senha:</label>
+            <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Confirme sua senha" required>
+            
+            <button type="button" id="cadastrarButton">Cadastrar</button>
+        </form>
+        <p>Já tem uma conta? <a href="index.html">Faça login</a></p>
+    </div>
+    <script src="js/cadastro.js"></script>
 </body>
 </html>

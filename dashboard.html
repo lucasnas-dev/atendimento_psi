@@ -3,41 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel Principal - Atendimento Psicológico</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="dashboard.css">
+    <title>Painel Principal</title>
+    <!-- Caminho para o CSS -->
+    <link rel="stylesheet" href="css/dashboard.css">
 </head>
 <body>
-    <div class="container-principal">
-        <div class="cabecalho-principal">
-            <div class="usuario-info">
-                <span id="usuarioLogado">Usuário: </span>
+    <div class="dashboard-container">
+        <!-- Menu Lateral Fixo -->
+        <aside class="menu-lateral">
+            <h2 class="menu-header" id="userMenu">Usuário</h2>
+            <ul class="menu-superior">
+                <li><a href="#" data-page="perfil.html">Meu Perfil</a></li>
+                <li><a href="#" data-page="cadastrar_consulta.html">Cadastrar Consulta</a></li>
+                <li><a href="#" data-page="listar_consultas.html">Listar Consultas</a></li>
+            </ul>
+            <div class="menu-inferior">
+                <button id="logoutButton">Sair</button>
             </div>
-            <div class="logout-container">
-                <a href="#" class="logout-small" onclick="logout()">Sair</a>
-            </div>
-        </div>
-        <div class="conteudo-container">
-            <div class="menu-lateral">
-                <ul>
-                    <li><a href="#" onclick="carregarConteudo('cadastrar_consulta.html')">Cadastrar Consulta</a></li>
-                    <li><a href="#" onclick="carregarConteudo('listar_consultas.html')">Listar Consultas</a></li>
-                    <li><a href="#" onclick="carregarConteudo('perfil.html')">Meu Perfil</a></li>
-                </ul>
-            </div>
-            <div class="conteudo-principal" id="conteudo">
-                <p>Selecione uma opção no menu ao lado.</p>
-            </div>
-        </div>
+        </aside>
+
+        <!-- Área de Conteúdo -->
+        <main class="conteudo-principal" id="conteudoDinamico">
+            <p>Selecione uma opção no menu à esquerda para começar.</p>
+        </main>
     </div>
-    <script src="script.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const usuarioLogado = localStorage.getItem('loggedUser');
-            if (usuarioLogado) {
-                document.getElementById('usuarioLogado').textContent = `Usuário: ${usuarioLogado}`;
-            }
-        });
-    </script>
+
+    <!-- Caminho para o JavaScript -->
+    <script src="js/dashboard.js"></script>
 </body>
 </html>
